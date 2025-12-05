@@ -7,12 +7,20 @@ module.exports = {
   ],
   theme: {
   	extend: {
+        fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+        },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+            brand: {
+                navy: '#0A2A43',
+                light: '#F4F5F7',
+                orange: '#FF7A00',
+            },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
