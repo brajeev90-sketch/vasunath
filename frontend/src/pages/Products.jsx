@@ -29,8 +29,19 @@ const Products = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {GEM_PORTFOLIO.map((item, index) => (
                             <Card key={index} className="border-l-4 border-l-brand-orange hover:shadow-md transition-all">
-                                <CardHeader className="pb-2">
-                                    <CardTitle className="text-lg text-brand-navy">{item.brand}</CardTitle>
+                                <CardHeader className="pb-2 flex items-center">
+                                    <div className="h-12 w-auto flex items-center justify-start">
+                                        <img 
+                                            src={item.logo} 
+                                            alt={`${item.brand} Logo`} 
+                                            className="max-h-full max-w-[100px] object-contain"
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src = "https://placehold.co/100x40?text=" + item.brand;
+                                            }}
+                                        />
+                                    </div>
+                                    <CardTitle className="text-lg text-brand-navy sr-only">{item.brand}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-gray-600">{item.products}</p>

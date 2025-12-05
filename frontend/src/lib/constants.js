@@ -21,18 +21,66 @@ export const NAV_LINKS = [
 ];
 
 export const GEM_PORTFOLIO = [
-    { brand: "HP", products: "Laptop, Desktop, All in One, Printers, Multifunction Printers, A3 Printers, Scanner, Servers, Workstation" },
-    { brand: "Acer", products: "Laptop, Desktop, All in One, Monitor" },
-    { brand: "LG", products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators, Smart Interactive Panel" },
-    { brand: "Seagate", products: "Internal & External Hard Disc" },
-    { brand: "Microtek", products: "UPS, Online UPS" },
-    { brand: "Brother", products: "Computer Printer & Multifunction Printer" },
-    { brand: "Benq", products: "Projector" },
-    { brand: "Kent", products: "RO system, Fan, Air Purifiers" },
-    { brand: "Ahuja", products: "Speaker" },
-    { brand: "Panasonic", products: "TV & Large Format Display, Interactive Panel" },
-    { brand: "Nikon", products: "Camera" },
-    { brand: "Vertiv (Emerson)", products: "UPS & Online UPS" }
+    { 
+        brand: "HP", 
+        products: "Laptop, Desktop, All in One, Printers, Multifunction Printers, A3 Printers, Scanner, Servers, Workstation",
+        logo: "https://logo.clearbit.com/hp.com"
+    },
+    { 
+        brand: "Acer", 
+        products: "Laptop, Desktop, All in One, Monitor",
+        logo: "https://logo.clearbit.com/acer.com"
+    },
+    { 
+        brand: "LG", 
+        products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators, Smart Interactive Panel",
+        logo: "https://logo.clearbit.com/lg.com"
+    },
+    { 
+        brand: "Seagate", 
+        products: "Internal & External Hard Disc",
+        logo: "https://logo.clearbit.com/seagate.com"
+    },
+    { 
+        brand: "Microtek", 
+        products: "UPS, Online UPS",
+        logo: "https://logo.clearbit.com/microtek.com"
+    },
+    { 
+        brand: "Brother", 
+        products: "Computer Printer & Multifunction Printer",
+        logo: "https://logo.clearbit.com/brother.com"
+    },
+    { 
+        brand: "Benq", 
+        products: "Projector",
+        logo: "https://logo.clearbit.com/benq.com"
+    },
+    { 
+        brand: "Kent", 
+        products: "RO system, Fan, Air Purifiers",
+        logo: "https://logo.clearbit.com/kent.co.in"
+    },
+    { 
+        brand: "Ahuja", 
+        products: "Speaker",
+        logo: "https://logo.clearbit.com/ahujaradios.com"
+    },
+    { 
+        brand: "Panasonic", 
+        products: "TV & Large Format Display, Interactive Panel",
+        logo: "https://logo.clearbit.com/panasonic.com"
+    },
+    { 
+        brand: "Nikon", 
+        products: "Camera",
+        logo: "https://logo.clearbit.com/nikon.com"
+    },
+    { 
+        brand: "Vertiv (Emerson)", 
+        products: "UPS & Online UPS",
+        logo: "https://logo.clearbit.com/vertiv.com"
+    }
 ];
 
 export const PRODUCTS = [

@@ -161,8 +161,20 @@ const Home = () => {
                         {GEM_PORTFOLIO.map((item, index) => (
                             <motion.div key={index} variants={fadeInUp}>
                                 <Card className="h-full hover:shadow-md transition-shadow duration-200 border-l-4 border-l-brand-orange">
-                                    <CardContent className="p-5">
-                                        <h3 className="text-lg font-bold text-brand-navy mb-2">{item.brand}</h3>
+                                    <CardContent className="p-5 flex flex-col items-center text-center">
+                                        <div className="h-16 w-auto mb-4 flex items-center justify-center">
+                                            <img 
+                                                src={item.logo} 
+                                                alt={`${item.brand} Logo`} 
+                                                className="max-h-full max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                                                onError={(e) => {
+                                                    e.target.onerror = null;
+                                                    e.target.src = "https://placehold.co/120x50?text=" + item.brand;
+                                                    e.target.classList.remove("grayscale");
+                                                }}
+                                            />
+                                        </div>
+                                        <h3 className="text-lg font-bold text-brand-navy mb-2 sr-only">{item.brand}</h3>
                                         <p className="text-sm text-gray-600">{item.products}</p>
                                     </CardContent>
                                 </Card>
