@@ -20,6 +20,22 @@ export const NAV_LINKS = [
     { name: "Contact", path: "/contact" },
 ];
 
+export const MARKET_AREAS = [
+    { name: "Delhi", path: "/market/delhi", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Gurgaon", path: "/market/gurgaon", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" }, // Using generic NCR/Delhi image as placeholder if specific one not found
+    { name: "Noida", path: "/market/noida", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" }, // Using generic NCR/Delhi image
+    { name: "Ghaziabad", path: "/market/ghaziabad", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" }, // Using generic NCR/Delhi image
+    { name: "Manesar", path: "/market/manesar", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" }, // Using generic NCR/Delhi image
+    { name: "Delhi & NCR", path: "/market/delhi-ncr", image: "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Mumbai", path: "/market/mumbai", image: "https://images.unsplash.com/photo-1625731226721-b4d51ae70e20?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Bangalore", path: "/market/bangalore", image: "https://images.unsplash.com/photo-1687158266872-fd2773fa76c6?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Hyderabad", path: "/market/hyderabad", image: "https://images.unsplash.com/photo-1657981630164-769503f3a9a8?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Chennai", path: "/market/chennai", image: "https://images.unsplash.com/photo-1566393612878-2e68d73691a3?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Kolkata", path: "/market/kolkata", image: "https://images.unsplash.com/photo-1666876419569-bd714131b4c1?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Pune", path: "/market/pune", image: "https://images.unsplash.com/photo-1705954797147-652784bc2484?auto=format&fit=crop&w=1920&q=80" },
+    { name: "Ahmedabad", path: "/market/ahmedabad", image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=1920&q=80" } // Generic city image
+];
+
 export const GEM_PORTFOLIO = [
     { 
         brand: "HP", 

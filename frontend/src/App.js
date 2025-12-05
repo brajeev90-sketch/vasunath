@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import Products from "./pages/Products";
 import Contact from "./pages/Contact";
+import MarketArea from "./pages/MarketArea";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="solutions" element={<Solutions />} />
           <Route path="products" element={<Products />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="market/:areaId" element={<MarketArea />} />
         </Route>
       </Routes>
       <Toaster />
