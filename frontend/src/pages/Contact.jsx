@@ -1,21 +1,56 @@
 
-import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, Clock, Loader2 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { useToast } from '../hooks/use-toast';
 import { COMPANY_INFO } from '../lib/constants';
+import axios from 'axios';
 
 const Contact = () => {
     const { toast } = useToast();
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        requirement_type: 'General Inquiry',
+        message: ''
+    });
 
-    const handleSubmit = (e) => {
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        toast({
-            title: "Message Sent!",
-            description: "We'll get back to you shortly.",
-        });
+        setLoading(true);
+        try {
+            const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+            await axios.post(`${BACKEND_URL}/api/contact`, formData);
+            
+            toast({
+                title: "Message Sent!",
+                description: "We'll get back to you shortly.",
+            });
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                requirement_type: 'General Inquiry',
+                message: ''
+            });
+        } catch (error) {
+            console.error("Contact error:", error);
+            toast({
+                title: "Error",
+                description: "Failed to send message. Please try again or call us directly.",
+                variant: "destructive"
+            });
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -37,22 +72,46 @@ const Contact = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-700">Name</label>
-                                    <Input required placeholder="John Doe" />
+                                    <Input 
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required 
+                                        placeholder="John Doe" 
+                                    />
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-700">Phone</label>
-                                    <Input required placeholder="+91 98765 43210" />
+                                    <Input 
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        required 
+                                        placeholder="+91 98765 43210" 
+                                    />
                                 </div>
                             </div>
                             
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Email</label>
-                                <Input required type="email" placeholder="john@example.com" />
+                                <Input 
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required 
+                                    type="email" 
+                                    placeholder="john@example.com" 
+                                />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Requirement Type</label>
-                                <select className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                <select 
+                                    name="requirement_type"
+                                    value={formData.requirement_type}
+                                    onChange={handleChange}
+                                    className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                >
                                     <option>General Inquiry</option>
                                     <option>Bulk Order</option>
                                     <option>Support</option>
@@ -62,11 +121,17 @@ const Contact = () => {
 
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-gray-700">Message</label>
-                                <Textarea placeholder="Tell us about your requirements..." className="h-32" />
+                                <Textarea 
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="Tell us about your requirements..." 
+                                    className="h-32" 
+                                />
                             </div>
 
-                            <Button type="submit" className="w-full bg-brand-orange hover:bg-orange-600 text-white font-semibold">
-                                Send Message
+                            <Button type="submit" disabled={loading} className="w-full bg-brand-orange hover:bg-orange-600 text-white font-semibold">
+                                {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Send Message'}
                             </Button>
                         </form>
                     </div>

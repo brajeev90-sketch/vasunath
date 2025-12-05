@@ -1,13 +1,46 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Truck, Clock, ShieldCheck, Server, Printer, Laptop, Database } from 'lucide-react';
+import { ArrowRight, Truck, Clock, Server, Printer, Laptop, Database, Loader2 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
-import { PRODUCTS } from '../lib/constants';
+import { useToast } from '../hooks/use-toast';
+import axios from 'axios';
 
 const Home = () => {
+    const { toast } = useToast();
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+        if (!email) return;
+        
+        setLoading(true);
+        try {
+            const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+            await axios.post(`${BACKEND_URL}/api/newsletter`, { name, email });
+            
+            toast({
+                title: "Subscribed!",
+                description: "Thank you for subscribing to our newsletter.",
+            });
+            setEmail('');
+            setName('');
+        } catch (error) {
+            console.error("Newsletter error:", error);
+            toast({
+                title: "Error",
+                description: "Failed to subscribe. Please try again.",
+                variant: "destructive"
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
@@ -127,11 +160,24 @@ const Home = () => {
                 <div className="max-w-3xl mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold text-brand-navy mb-4">Stay Updated</h2>
                     <p className="text-gray-600 mb-8">Subscribe to our newsletter for the latest IT trends and product offers.</p>
-                    <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-                        <Input type="text" placeholder="Your Name" className="bg-gray-50" />
-                        <Input type="email" placeholder="Your Email" className="bg-gray-50" />
-                        <Button type="submit" className="bg-brand-orange hover:bg-orange-600 text-white">
-                            Subscribe
+                    <form className="flex flex-col sm:flex-row gap-4" onSubmit={handleSubscribe}>
+                        <Input 
+                            type="text" 
+                            placeholder="Your Name" 
+                            className="bg-gray-50" 
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <Input 
+                            type="email" 
+                            placeholder="Your Email" 
+                            className="bg-gray-50" 
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <Button type="submit" disabled={loading} className="bg-brand-orange hover:bg-orange-600 text-white">
+                            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Subscribe'}
                         </Button>
                     </form>
                 </div>
