@@ -20,6 +20,21 @@ export const NAV_LINKS = [
     { name: "Contact", path: "/contact" },
 ];
 
+export const GEM_PORTFOLIO = [
+    { brand: "HP", products: "Laptop, Desktop, All in One, Printers, Multifunction Printers, A3 Printers, Scanner, Servers, Workstation" },
+    { brand: "Acer", products: "Laptop, Desktop, All in One, Monitor" },
+    { brand: "LG", products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators, Smart Interactive Panel" },
+    { brand: "Seagate", products: "Internal & External Hard Disc" },
+    { brand: "Microtek", products: "UPS, Online UPS" },
+    { brand: "Brother", products: "Computer Printer & Multifunction Printer" },
+    { brand: "Benq", products: "Projector" },
+    { brand: "Kent", products: "RO system, Fan, Air Purifiers" },
+    { brand: "Ahuja", products: "Speaker" },
+    { brand: "Panasonic", products: "TV & Large Format Display, Interactive Panel" },
+    { brand: "Nikon", products: "Camera" },
+    { brand: "Vertiv (Emerson)", products: "UPS & Online UPS" }
+];
+
 export const PRODUCTS = [
     {
         id: 1,

@@ -1,13 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Truck, Clock, Server, Printer, Laptop, Database, Loader2 } from 'lucide-react';
+import { ArrowRight, Truck, Clock, Server, Printer, Laptop, Database, Loader2, ShoppingBag, Phone } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
-import { HERO_IMAGES } from '../lib/constants';
+import { HERO_IMAGES, GEM_PORTFOLIO } from '../lib/constants';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Home = () => {
@@ -129,6 +129,46 @@ const Home = () => {
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
+                </div>
+            </section>
+
+            {/* GeM Authorization Section */}
+            <section className="py-16 bg-gray-50 border-b border-gray-200">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-10">
+                        <div className="inline-flex items-center justify-center p-2 bg-orange-100 rounded-full mb-4">
+                             <ShoppingBag className="h-6 w-6 text-brand-orange" />
+                        </div>
+                        <h2 className="text-3xl font-bold text-brand-navy">Authorised Seller in GeM</h2>
+                        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+                            We are an authorised Seller in GeM (Government e-Marketplace) for the top technology brands.
+                        </p>
+                        <div className="mt-6 flex items-center justify-center">
+                            <a href="tel:+918830490358" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-navy hover:bg-blue-900 transition-colors shadow-md">
+                                <Phone className="mr-2 h-5 w-5" />
+                                Call +91 8830490358 for GeM Orders
+                            </a>
+                        </div>
+                    </div>
+
+                    <motion.div 
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        variants={staggerContainer}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    >
+                        {GEM_PORTFOLIO.map((item, index) => (
+                            <motion.div key={index} variants={fadeInUp}>
+                                <Card className="h-full hover:shadow-md transition-shadow duration-200 border-l-4 border-l-brand-orange">
+                                    <CardContent className="p-5">
+                                        <h3 className="text-lg font-bold text-brand-navy mb-2">{item.brand}</h3>
+                                        <p className="text-sm text-gray-600">{item.products}</p>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </section>
 
