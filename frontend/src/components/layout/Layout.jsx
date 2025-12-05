@@ -157,16 +157,28 @@ const Layout = () => {
             </main>
             <Footer />
             
-            {/* Floating WhatsApp Button */}
-            <a 
-                href={`https://wa.me/${COMPANY_INFO.whatsapp.replace('+', '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-lg transition-all duration-300 z-50 hover:scale-110"
-                aria-label="Contact on WhatsApp"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-            </a>
+            {/* Floating Buttons Container */}
+            <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+                {/* Call Button */}
+                <a 
+                    href={`tel:${COMPANY_INFO.phones[0].replace(/\s+/g, '')}`}
+                    className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                    aria-label="Call Us"
+                >
+                    <Phone className="h-6 w-6" />
+                </a>
+
+                {/* Floating WhatsApp Button */}
+                <a 
+                    href={`https://wa.me/${COMPANY_INFO.whatsapp.replace('+', '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                    aria-label="Contact on WhatsApp"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                </a>
+            </div>
         </div>
     );
 };

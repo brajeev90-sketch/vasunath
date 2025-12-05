@@ -40,14 +40,14 @@ export const PRODUCTS = [
         name: "Printer Ink & Consumables",
         description: "Genuine supplies for all major printer brands.",
         category: "Supplies",
-        image: "https://images.unsplash.com/photo-1650094980833-7373de26feb6?auto=format&fit=crop&w=800&q=80"
+        image: "https://images.unsplash.com/photo-1706895040634-62055892cbbb?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 4,
         name: "Storage Solutions",
         description: "High-capacity hard disks and SSDs.",
         category: "Storage",
-        image: "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?auto=format&fit=crop&w=800&q=80"
+        image: "https://images.unsplash.com/photo-1564457461758-8ff96e439e83?auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 5,
@@ -63,21 +63,27 @@ export const SOLUTIONS = [
         id: 1,
         title: "Smart Workspaces",
         description: "Transform your office with integrated IT infrastructure that enhances collaboration and efficiency.",
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
         features: ["Network Integration", "Wireless Solutions", "Modern Workstations"]
     },
     {
         id: 2,
         title: "Digital Classrooms",
         description: "Empower learning with state-of-the-art educational technology and computer lab setups.",
-        image: "https://images.unsplash.com/photo-1719159381981-1327b22aff9b?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.pexels.com/photos/3747473/pexels-photo-3747473.jpeg?auto=format&fit=crop&w=800&q=80",
         features: ["Interactive Displays", "Lab Networking", "Student Workstations"]
     },
     {
         id: 3,
         title: "Document Management",
         description: "Streamline your workflow with high-speed scanning and secure printing solutions.",
-        image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=format&fit=crop&w=800&q=80",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
         features: ["Cloud Archiving", "Secure Printing", "Automated Workflows"]
     }
+];
+
+export const HERO_IMAGES = [
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80", // Office People
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80", // Server Room
+    "https://images.unsplash.com/photo-1644079446600-219068676743?auto=format&fit=crop&w=1920&q=80"  // Warehouse
 ];
