@@ -150,6 +150,18 @@ frontend:
           agent: "testing"
           comment: "Contact page loads correctly, form fields work, and form submission shows success toast 'Message Sent!'"
 
+  - task: "Home Page UI Elements Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Comprehensive UI verification completed successfully. All elements verified: 1) Two floating buttons (Call & WhatsApp) positioned correctly in bottom right corner, 2) Hero section background image loads properly from HERO_IMAGES array, 3) All 4 product category cards display images correctly (Heavy Duty Printers, Desktops & PCs, Storage Solutions, IT Consumables). All images load with proper src URLs from Unsplash. UI meets all specified requirements."
+
 backend:
   - task: "Contact Form API"
     implemented: true
