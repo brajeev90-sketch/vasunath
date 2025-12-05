@@ -15,10 +15,11 @@ const Navbar = () => {
                 <div className="flex justify-between h-20">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center">
-                            <span className="text-brand-navy text-2xl font-bold tracking-tight">
-                                VASU NATH
-                                <span className="text-brand-orange block text-sm font-medium tracking-normal">ENTERPRISES</span>
-                            </span>
+                            <img 
+                                src="https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/y0t4ps30_logo-11-300x159.webp" 
+                                alt="Vasu Nath Enterprises" 
+                                className="h-14 w-auto"
+                            />
                         </Link>
                     </div>
                     
