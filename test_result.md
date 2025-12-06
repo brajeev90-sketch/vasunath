@@ -250,6 +250,18 @@ test_plan:
           agent: "testing"
           comment: "Comprehensive testing of Strategic Technology Partners section completed successfully. All 3 verification requirements passed: 1) ✅ Home page loads correctly with proper navigation and hero section, 2) ✅ Strategic Technology Partners section layout is perfect - no overlapping items, proper container structure (1920x96px with overflow:hidden), logos positioned correctly with consistent spacing, 3) ✅ Ticker animation is fully functional - 24 brand logos moving smoothly in infinite marquee (40s duration), animation properties verified (marquee keyframe active, proper CSS classes), movement confirmed via transform matrix changes over time. Layout structure prevents any spillover or visual issues. All brand logos (HP, Acer, LG, Seagate, Microtek, Brother, BenQ, Kent, Ahuja, Panasonic, Nikon, Vertiv) display correctly with proper alt text and source URLs."
 
+  - task: "Specific Logo Verification (Poly, Netmagic, Veeam)"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Specific logo verification testing completed successfully. All 3 requested requirements verified: 1) ✅ Poly logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/9ciqmcrq_3.png), 2) ✅ Netmagic logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/yklv7z96_4.jpg), 3) ✅ Veeam logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/bsgnlk4j_5.png). All logos verified as NOT grayscaled - CSS classes contain 'max-h-14 max-w-full object-contain' with no grayscale filters applied. Ticker animation confirmed working properly with transform matrix changes from -339.198 to -505.371 over 2 seconds. Total 30 images found in ticker section with all requested logos properly displayed and functional."
+
 agent_communication:
     - agent: "testing"
       message: "Completed comprehensive UI testing. Fixed critical BrowserRouter issue that was preventing React app from rendering. All requested functionality now working: 1) Home page displays 'Vasu Nath Enterprises' text, 2) View Products button navigates to /products, 3) Contact form submission works with success toast message."
