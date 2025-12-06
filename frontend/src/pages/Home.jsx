@@ -121,7 +121,7 @@ const Home = () => {
                 <div className="flex overflow-hidden group">
                     <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
                         {GEM_PORTFOLIO.map((item, idx) => (
-                            <div key={idx} className="flex items-center justify-center w-40 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer">
+                            <div key={idx} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
                                 <img 
                                     src={item.logo} 
                                     alt={item.brand} 
@@ -136,7 +136,7 @@ const Home = () => {
                     </div>
                     <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
                         {GEM_PORTFOLIO.map((item, idx) => (
-                            <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer">
+                            <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
                                 <img 
                                     src={item.logo} 
                                     alt={item.brand} 
