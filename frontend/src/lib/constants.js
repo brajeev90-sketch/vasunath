@@ -60,57 +60,57 @@ export const GEM_PORTFOLIO = [
     { 
         brand: "Acer", 
         products: "Laptop, Desktop, All in One, Monitor",
-        logo: "https://logo.clearbit.com/acer.com"
+        // Logo removed as per request
     },
     { 
         brand: "LG", 
         products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators, Smart Interactive Panel",
-        logo: "https://logo.clearbit.com/lg.com"
+        // Logo removed as per request
     },
     { 
         brand: "Seagate", 
         products: "Internal & External Hard Disc",
-        logo: "https://logo.clearbit.com/seagate.com"
+        // Logo removed as per request
     },
     { 
         brand: "Microtek", 
         products: "UPS, Online UPS",
-        logo: "https://logo.clearbit.com/microtek.com"
+        // Logo removed as per request
     },
     { 
         brand: "Brother", 
         products: "Computer Printer & Multifunction Printer",
-        logo: "https://logo.clearbit.com/brother.com"
+        // Logo removed as per request
     },
     { 
         brand: "Benq", 
         products: "Projector",
-        logo: "https://logo.clearbit.com/benq.com"
+        // Logo removed as per request
     },
     { 
         brand: "Kent", 
         products: "RO system, Fan, Air Purifiers",
-        logo: "https://logo.clearbit.com/kent.co.in"
+        // Logo removed as per request
     },
     { 
         brand: "Ahuja", 
         products: "Speaker",
-        logo: "https://logo.clearbit.com/ahujaradios.com"
+        // Logo removed as per request
     },
     { 
         brand: "Panasonic", 
         products: "TV & Large Format Display, Interactive Panel",
-        logo: "https://logo.clearbit.com/panasonic.com"
+        // Logo removed as per request
     },
     { 
         brand: "Nikon", 
         products: "Camera",
-        logo: "https://logo.clearbit.com/nikon.com"
+        // Logo removed as per request
     },
     { 
         brand: "Vertiv (Emerson)", 
         products: "UPS & Online UPS",
-        logo: "https://logo.clearbit.com/vertiv.com"
+        // Logo removed as per request
     }
 ];
 

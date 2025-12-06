@@ -25,6 +25,11 @@ const Home = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
+    // Filter partners that have valid logos for the slider
+    const PARTNERS_WITH_LOGOS = GEM_PORTFOLIO.filter(item => item.logo);
+    // Duplicate list to ensure smooth infinite scroll even with few items
+    const SLIDER_ITEMS = [...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS];
+
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
@@ -112,45 +117,38 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Fixed Layout */}
-            <section className="py-12 bg-white border-b border-gray-100 overflow-hidden">
-                <div className="max-w-[1400px] mx-auto px-4 mb-8">
-                    <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Our Strategic Technology Partners</p>
-                </div>
-                {/* Use side-by-side flex containers for smooth infinite scroll without overlap */}
-                <div className="flex overflow-hidden group">
-                    <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
-                        {GEM_PORTFOLIO.map((item, idx) => (
-                            <div key={idx} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
-                                <img 
-                                    src={item.logo} 
-                                    alt={item.brand} 
-                                    className="max-h-14 max-w-full object-contain"
-                                    onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
-                                    }}
-                                />
-                            </div>
-                        ))}
+            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Only Partners with Logos */}
+            {PARTNERS_WITH_LOGOS.length > 0 && (
+                <section className="py-12 bg-white border-b border-gray-100 overflow-hidden">
+                    <div className="max-w-[1400px] mx-auto px-4 mb-8">
+                        <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Our Strategic Technology Partners</p>
                     </div>
-                    <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
-                        {GEM_PORTFOLIO.map((item, idx) => (
-                            <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
-                                <img 
-                                    src={item.logo} 
-                                    alt={item.brand} 
-                                    className="max-h-14 max-w-full object-contain"
-                                    onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
-                                    }}
-                                />
-                            </div>
-                        ))}
+                    <div className="flex overflow-hidden group">
+                        <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
+                            {SLIDER_ITEMS.map((item, idx) => (
+                                <div key={idx} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
+                                    <img 
+                                        src={item.logo} 
+                                        alt={item.brand} 
+                                        className="max-h-14 max-w-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
+                            {SLIDER_ITEMS.map((item, idx) => (
+                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
+                                    <img 
+                                        src={item.logo} 
+                                        alt={item.brand} 
+                                        className="max-h-14 max-w-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* 3. BUSINESS VERTICALS (Cards) */}
             <section className="py-24 bg-gray-50">
@@ -245,11 +243,13 @@ const Home = () => {
                             <div className="bg-white p-2 rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
                                 <div className="bg-gray-100 rounded-xl p-8 border border-gray-200">
                                     <div className="grid grid-cols-3 gap-4">
-                                        {GEM_PORTFOLIO.slice(0, 9).map((item, idx) => (
-                                            <div key={idx} className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24">
-                                                <img src={item.logo} alt={item.brand} className="max-h-12 max-w-full object-contain" 
-                                                    onError={(e) => { e.target.onerror = null; e.target.src = `https://placehold.co/80x40?text=${item.brand}`; }}
-                                                />
+                                        {GEM_PORTFOLIO.slice(0, 12).map((item, idx) => (
+                                            <div key={idx} className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center h-24 overflow-hidden">
+                                                {item.logo ? (
+                                                    <img src={item.logo} alt={item.brand} className="max-h-12 max-w-full object-contain" />
+                                                ) : (
+                                                    <span className="text-sm font-bold text-brand-navy text-center break-words leading-tight">{item.brand}</span>
+                                                )}
                                             </div>
                                         ))}
                                     </div>

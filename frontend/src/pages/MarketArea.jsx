@@ -81,15 +81,15 @@ const MarketArea = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                         {GEM_PORTFOLIO.map((item, index) => (
                             <div key={index} className="bg-white p-4 rounded-lg shadow-sm border hover:shadow-md transition-all flex items-center justify-center h-24">
-                                <img 
-                                    src={item.logo} 
-                                    alt={item.brand} 
-                                    className="max-h-12 max-w-full object-contain grayscale hover:grayscale-0 transition-all"
-                                    onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = "https://placehold.co/80x30?text=" + item.brand;
-                                    }}
-                                />
+                                {item.logo ? (
+                                    <img 
+                                        src={item.logo} 
+                                        alt={item.brand} 
+                                        className="max-h-12 max-w-full object-contain"
+                                    />
+                                ) : (
+                                    <span className="text-sm font-bold text-brand-navy text-center break-words leading-tight">{item.brand}</span>
+                                )}
                             </div>
                         ))}
                     </div>

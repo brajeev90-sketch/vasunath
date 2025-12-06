@@ -31,15 +31,15 @@ const Products = () => {
                             <Card key={index} className="border-l-4 border-l-brand-orange hover:shadow-md transition-all">
                                 <CardHeader className="pb-2 flex items-center">
                                     <div className="h-12 w-auto flex items-center justify-start">
-                                        <img 
-                                            src={item.logo} 
-                                            alt={`${item.brand} Logo`} 
-                                            className="max-h-full max-w-[100px] object-contain"
-                                            onError={(e) => {
-                                                e.target.onerror = null;
-                                                e.target.src = "https://placehold.co/100x40?text=" + item.brand;
-                                            }}
-                                        />
+                                        {item.logo ? (
+                                            <img 
+                                                src={item.logo} 
+                                                alt={`${item.brand} Logo`} 
+                                                className="max-h-full max-w-[100px] object-contain"
+                                            />
+                                        ) : (
+                                            <span className="text-xl font-bold text-brand-navy">{item.brand}</span>
+                                        )}
                                     </div>
                                     <CardTitle className="text-lg text-brand-navy sr-only">{item.brand}</CardTitle>
                                 </CardHeader>
