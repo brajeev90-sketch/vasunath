@@ -226,6 +226,18 @@ test_plan:
           agent: "testing"
           comment: "Comprehensive verification of updated home page content completed successfully. All 5 requested elements verified: 1) ✅ Hero section displays new heading 'Powering Modern Enterprises' with proper styling and gradient text, 2) ✅ GeM section has new styling with 'Authorised Seller in GeM' heading prominently displayed with proper branding, 3) ✅ GeM section shows HP and LG brands with their respective product listings, 4) ✅ Products section ('Our Solutions') displays all 4 category cards (Heavy Duty Printers, Desktops & PCs, Storage Solutions, IT Consumables) with proper images and descriptions, 5) ✅ Navigation and floating action buttons working correctly. All updated content is properly implemented, visually appealing, and fully functional."
 
+  - task: "Corporate Home Page Content Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Latest corporate home page content verification completed successfully. All 5 requested elements verified: 1) ✅ Hero section displays updated corporate heading 'Accelerating Digital Transformation' with proper gradient styling on 'Digital Transformation' text, 2) ✅ 'Our Strategic Technology Partners' ticker section functioning correctly with 24 partner logos in marquee animation, 3) ✅ 'Business Solutions' cards section properly displays all 3 solution cards (Smart Workspaces, Digital Classrooms, Document Management) with images and descriptions, 4) ✅ 'Trusted Partner for Public Sector Procurement' section with Government e-Marketplace badge and all 4 key features (Authorized OEM, Compliant Billing, Pan-India Logistics, Dedicated Support) visible and functional, 5) ✅ Overall page structure, navigation bar, and 5 floating action buttons working correctly. All corporate content updates are properly implemented and fully functional."
+
 agent_communication:
     - agent: "testing"
       message: "Completed comprehensive UI testing. Fixed critical BrowserRouter issue that was preventing React app from rendering. All requested functionality now working: 1) Home page displays 'Vasu Nath Enterprises' text, 2) View Products button navigates to /products, 3) Contact form submission works with success toast message."
