@@ -112,37 +112,38 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Redington Style */}
-            <section className="py-10 bg-white border-b border-gray-100 overflow-hidden">
-                <div className="max-w-[1400px] mx-auto px-4 mb-6">
+            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Fixed Layout */}
+            <section className="py-12 bg-white border-b border-gray-100 overflow-hidden">
+                <div className="max-w-[1400px] mx-auto px-4 mb-8">
                     <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Our Strategic Technology Partners</p>
                 </div>
-                <div className="relative flex overflow-x-hidden group">
-                    <div className="animate-marquee whitespace-nowrap flex items-center space-x-16 py-4">
-                        {[...GEM_PORTFOLIO, ...GEM_PORTFOLIO].map((item, idx) => (
+                {/* Use side-by-side flex containers for smooth infinite scroll without overlap */}
+                <div className="flex overflow-hidden group">
+                    <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
+                        {GEM_PORTFOLIO.map((item, idx) => (
                             <div key={idx} className="flex items-center justify-center w-40 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer">
                                 <img 
                                     src={item.logo} 
                                     alt={item.brand} 
-                                    className="max-h-12 max-w-full object-contain"
+                                    className="max-h-14 max-w-full object-contain"
                                     onError={(e) => {
                                         e.target.onerror = null;
-                                        e.target.src = `https://placehold.co/120x40?text=${item.brand}`;
+                                        e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
                                     }}
                                 />
                             </div>
                         ))}
                     </div>
-                    <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center space-x-16 py-4">
-                        {[...GEM_PORTFOLIO, ...GEM_PORTFOLIO].map((item, idx) => (
+                    <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
+                        {GEM_PORTFOLIO.map((item, idx) => (
                             <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer">
                                 <img 
                                     src={item.logo} 
                                     alt={item.brand} 
-                                    className="max-h-12 max-w-full object-contain"
+                                    className="max-h-14 max-w-full object-contain"
                                     onError={(e) => {
                                         e.target.onerror = null;
-                                        e.target.src = `https://placehold.co/120x40?text=${item.brand}`;
+                                        e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
                                     }}
                                 />
                             </div>
