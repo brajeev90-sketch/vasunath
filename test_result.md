@@ -196,6 +196,18 @@ metadata:
   test_sequence: 1
   run_ui: true
 
+  - task: "Strategic Partners Slider Content Filtering Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Comprehensive verification of Strategic Technology Partners slider content filtering completed successfully. All 4 requirements verified: ✅ Slider contains ONLY HP, Poly, Netmagic, and Veeam logos (4 unique logos found with correct image sources), ✅ Excluded brands (Acer, LG, Seagate, Microtek, Brother, Benq, Kent, Ahuja, Panasonic, Nikon, Vertiv) are NOT present in slider, ✅ GeM Authorised Portfolio grid correctly displays brands with logos as images (HP, Poly, Netmagic, Veeam) and brands without logos as text (Acer, LG, Seagate, Microtek, Brother, Benq, Kent, Ahuja), ✅ Implementation perfectly matches filtering logic - PARTNERS_WITH_LOGOS filter correctly excludes brands without logo property from slider while including them as text in portfolio grid. Total verification: 40 ticker images (duplicated for infinite scroll), 4 unique logo sources, 12 portfolio items with 4 logos + 8 text items."
+
 test_plan:
   current_focus: []
   stuck_tasks: []
