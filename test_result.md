@@ -274,6 +274,17 @@ test_plan:
           agent: "testing"
           comment: "Specific logo verification testing completed successfully. All 3 requested requirements verified: 1) ✅ Poly logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/9ciqmcrq_3.png), 2) ✅ Netmagic logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/yklv7z96_4.jpg), 3) ✅ Veeam logo present in ticker (3 instances found, visible, correct src: https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/bsgnlk4j_5.png). All logos verified as NOT grayscaled - CSS classes contain 'max-h-14 max-w-full object-contain' with no grayscale filters applied. Ticker animation confirmed working properly with transform matrix changes from -339.198 to -505.371 over 2 seconds. Total 30 images found in ticker section with all requested logos properly displayed and functional."
 
+  - task: "Strategic Partners Heading Style & Required Logo Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/Home.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "Strategic Technology Partners heading style and required logo verification completed successfully. All 4 requested verification requirements passed: ✅ 'Our Strategic Technology Partners' heading style perfectly matches 'Business Solutions' heading (36px font-size, 700 font-weight, rgb(10, 42, 67) color, center alignment), ✅ Both headings have orange underlines present, ✅ All required logos (NetApp, AWS, Schneider Electric, Cisco) are present in ticker with correct image sources (g79777yy_7.png, tjwwz5qh_8.png, l5yhjhil_9.png, lfn2mfrs_10.jpg), ✅ Excluded brands (Acer, LG, Seagate, Microtek, Brother, Benq, Kent, Ahuja, Panasonic, Nikon, Vertiv) are correctly NOT present in ticker. Ticker contains exactly 8 unique partner logos with proper filtering logic working as expected. Animation confirmed working with transform matrix changes from -845.096 to -1293.57 over 2 seconds."
 agent_communication:
     - agent: "testing"
       message: "Completed comprehensive UI testing. Fixed critical BrowserRouter issue that was preventing React app from rendering. All requested functionality now working: 1) Home page displays 'Vasu Nath Enterprises' text, 2) View Products button navigates to /products, 3) Contact form submission works with success toast message."
