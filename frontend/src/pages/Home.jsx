@@ -27,8 +27,12 @@ const Home = () => {
 
     // Filter partners that have valid logos for the slider
     const PARTNERS_WITH_LOGOS = GEM_PORTFOLIO.filter(item => item.logo);
-    // Duplicate list to ensure smooth infinite scroll even with few items
-    const SLIDER_ITEMS = [...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS, ...PARTNERS_WITH_LOGOS];
+    
+    // Split partners into two rows for the dual-slider effect
+    // Ensure we have enough items to look good, duplicate if necessary
+    const midpoint = Math.ceil(PARTNERS_WITH_LOGOS.length / 2);
+    const ROW_1_PARTNERS = [...PARTNERS_WITH_LOGOS.slice(0, midpoint), ...PARTNERS_WITH_LOGOS.slice(0, midpoint), ...PARTNERS_WITH_LOGOS.slice(0, midpoint), ...PARTNERS_WITH_LOGOS.slice(0, midpoint)];
+    const ROW_2_PARTNERS = [...PARTNERS_WITH_LOGOS.slice(midpoint), ...PARTNERS_WITH_LOGOS.slice(midpoint), ...PARTNERS_WITH_LOGOS.slice(midpoint), ...PARTNERS_WITH_LOGOS.slice(midpoint)];
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -117,32 +121,76 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Fixed Layout */}
+            {/* 2. PARTNER ECOSYSTEM (Two-Row Slider) */}
             {PARTNERS_WITH_LOGOS.length > 0 && (
                 <section className="py-16 bg-white border-b border-gray-100 overflow-hidden">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-brand-navy mb-4">Our Strategic Technology Partners</h2>
                         <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
                     </div>
-                    <div className="flex overflow-hidden group">
-                        <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
-                            {SLIDER_ITEMS.map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
+                    
+                    {/* Row 1: Left to Right (Reverse Marquee) */}
+                    <div className="flex overflow-hidden group mb-8">
+                        <div className="flex space-x-16 animate-marquee-reverse-slow min-w-full shrink-0 items-center justify-around py-4">
+                            {ROW_1_PARTNERS.map((item, idx) => (
+                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
-                                        className="max-h-14 max-w-full object-contain"
+                                        className="max-h-16 max-w-full object-contain"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
+                                        }}
                                     />
                                 </div>
                             ))}
                         </div>
-                        <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
-                            {SLIDER_ITEMS.map((item, idx) => (
-                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-16 transition-all duration-300 hover:scale-110 cursor-pointer">
+                        <div className="flex space-x-16 animate-marquee-reverse-slow min-w-full shrink-0 items-center justify-around py-4">
+                            {ROW_1_PARTNERS.map((item, idx) => (
+                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
-                                        className="max-h-14 max-w-full object-contain"
+                                        className="max-h-16 max-w-full object-contain"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Row 2: Right to Left (Normal Marquee) */}
+                    <div className="flex overflow-hidden group">
+                        <div className="flex space-x-16 animate-marquee-slow min-w-full shrink-0 items-center justify-around py-4">
+                            {ROW_2_PARTNERS.map((item, idx) => (
+                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                    <img 
+                                        src={item.logo} 
+                                        alt={item.brand} 
+                                        className="max-h-16 max-w-full object-contain"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="flex space-x-16 animate-marquee-slow min-w-full shrink-0 items-center justify-around py-4">
+                            {ROW_2_PARTNERS.map((item, idx) => (
+                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                    <img 
+                                        src={item.logo} 
+                                        alt={item.brand} 
+                                        className="max-h-16 max-w-full object-contain"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `https://placehold.co/120x50?text=${item.brand}`;
+                                        }}
                                     />
                                 </div>
                             ))}

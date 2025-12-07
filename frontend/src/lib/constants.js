@@ -43,6 +43,16 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/1b3ty9gc_1.png"
     },
     { 
+        brand: "Microsoft", 
+        products: "Software, Cloud Solutions, Surface Devices, Operating Systems",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/o8nlmdcm_13.png"
+    },
+    { 
+        brand: "Cisco", 
+        products: "Networking, Cloud, Cybersecurity Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/lfn2mfrs_10.jpg"
+    },
+    { 
         brand: "Poly", 
         products: "Video Conferencing, Headsets, Phones, Collaboration Solutions",
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/9ciqmcrq_3.png"
@@ -73,9 +83,19 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/l5yhjhil_9.png"
     },
     { 
-        brand: "Cisco", 
-        products: "Networking, Cloud, Cybersecurity Solutions",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/lfn2mfrs_10.jpg"
+        brand: "Avaya", 
+        products: "Business Communications, Contact Center Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/hhxdrbhk_14.png"
+    },
+    { 
+        brand: "Citrix", 
+        products: "Virtualization, Networking, Cloud Computing",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/nmvuw5cc_12.png"
+    },
+    { 
+        brand: "Emerson", 
+        products: "Critical Infrastructure, Automation Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/m9mx5ib5_15.png"
     },
     { 
         brand: "Acer", 
@@ -128,7 +148,7 @@ export const GEM_PORTFOLIO = [
         // Logo removed as per request
     },
     { 
-        brand: "Vertiv (Emerson)", 
+        brand: "Vertiv", 
         products: "UPS & Online UPS",
         // Logo removed as per request
     }

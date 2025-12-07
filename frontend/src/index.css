@@ -89,11 +89,30 @@ code {
   to { transform: translateX(-100%); }
 }
 
+@keyframes marquee-reverse {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Normal Speed */
 .animate-marquee {
   animation: marquee 40s linear infinite;
 }
-/* Add a pause on hover */
-.group:hover .animate-marquee {
+
+/* Slower Speed (60s) */
+.animate-marquee-slow {
+  animation: marquee 60s linear infinite;
+}
+
+/* Reverse Slower Speed (60s) */
+.animate-marquee-reverse-slow {
+  animation: marquee-reverse 60s linear infinite;
+}
+
+/* Pause on hover */
+.group:hover .animate-marquee,
+.group:hover .animate-marquee-slow,
+.group:hover .animate-marquee-reverse-slow {
   animation-play-state: paused;
 }
 
