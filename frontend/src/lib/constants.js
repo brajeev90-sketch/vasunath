@@ -58,6 +58,26 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/bsgnlk4j_5.png"
     },
     { 
+        brand: "NetApp", 
+        products: "Cloud Data Services, Storage Systems, Software",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/g79777yy_7.png"
+    },
+    { 
+        brand: "AWS", 
+        products: "Cloud Computing Services",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/tjwwz5qh_8.png"
+    },
+    { 
+        brand: "Schneider Electric", 
+        products: "Energy Management, Automation Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/l5yhjhil_9.png"
+    },
+    { 
+        brand: "Cisco", 
+        products: "Networking, Cloud, Cybersecurity Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/lfn2mfrs_10.jpg"
+    },
+    { 
         brand: "Acer", 
         products: "Laptop, Desktop, All in One, Monitor",
         // Logo removed as per request

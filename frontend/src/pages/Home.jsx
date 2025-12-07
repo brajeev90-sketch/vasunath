@@ -117,11 +117,12 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Only Partners with Logos */}
+            {/* 2. PARTNER ECOSYSTEM (Infinite Ticker) - Fixed Layout */}
             {PARTNERS_WITH_LOGOS.length > 0 && (
-                <section className="py-12 bg-white border-b border-gray-100 overflow-hidden">
-                    <div className="max-w-[1400px] mx-auto px-4 mb-8">
-                        <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Our Strategic Technology Partners</p>
+                <section className="py-16 bg-white border-b border-gray-100 overflow-hidden">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-bold text-brand-navy mb-4">Our Strategic Technology Partners</h2>
+                        <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
                     </div>
                     <div className="flex overflow-hidden group">
                         <div className="flex space-x-16 animate-marquee min-w-full shrink-0 items-center justify-around py-4">
