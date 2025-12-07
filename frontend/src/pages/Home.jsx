@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Truck, Clock, Server, Printer, Laptop, Database, Loader2, ShoppingBag, Phone, CheckCircle, ShieldCheck, Globe, MapPin, ChevronRight, Users, Building2, BarChart3 } from 'lucide-react';
 import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
@@ -133,7 +133,7 @@ const Home = () => {
                     <div className="flex overflow-hidden group mb-8">
                         <div className="flex space-x-16 animate-marquee-reverse-slow min-w-full shrink-0 items-center justify-around py-4">
                             {ROW_1_PARTNERS.map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
@@ -148,7 +148,7 @@ const Home = () => {
                         </div>
                         <div className="flex space-x-16 animate-marquee-reverse-slow min-w-full shrink-0 items-center justify-around py-4">
                             {ROW_1_PARTNERS.map((item, idx) => (
-                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
@@ -167,7 +167,7 @@ const Home = () => {
                     <div className="flex overflow-hidden group">
                         <div className="flex space-x-16 animate-marquee-slow min-w-full shrink-0 items-center justify-around py-4">
                             {ROW_2_PARTNERS.map((item, idx) => (
-                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                <div key={idx} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
@@ -182,7 +182,7 @@ const Home = () => {
                         </div>
                         <div className="flex space-x-16 animate-marquee-slow min-w-full shrink-0 items-center justify-around py-4">
                             {ROW_2_PARTNERS.map((item, idx) => (
-                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer grayscale hover:grayscale-0 opacity-80 hover:opacity-100">
+                                <div key={`dup-${idx}`} className="flex items-center justify-center w-40 h-20 transition-all duration-300 hover:scale-110 cursor-pointer">
                                     <img 
                                         src={item.logo} 
                                         alt={item.brand} 
@@ -199,8 +199,56 @@ const Home = () => {
                 </section>
             )}
 
-            {/* 3. BUSINESS VERTICALS (Cards) */}
-            <section className="py-24 bg-gray-50">
+            {/* 3. FEATURED CATEGORIES (From Products Page) */}
+            <section className="py-24 bg-gray-50 border-b border-gray-200">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-brand-navy mb-4">Featured Categories</h2>
+                        <div className="w-24 h-1 bg-brand-orange mx-auto mb-6"></div>
+                        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                            Browse our premium selection of IT hardware and enterprise solutions.
+                        </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {PRODUCTS.map((product) => (
+                            <Card key={product.id} className="flex flex-col overflow-hidden hover:shadow-2xl transition-shadow duration-300 bg-white border-gray-100 h-full">
+                                <div className="h-56 overflow-hidden bg-gray-50 relative group">
+                                    <img 
+                                        src={product.image} 
+                                        alt={product.name} 
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-brand-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
+                                <CardHeader className="pb-2">
+                                    <div className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-2">
+                                        {product.category}
+                                    </div>
+                                    <CardTitle className="text-xl text-brand-navy">{product.name}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <CardDescription className="text-sm text-gray-600 leading-relaxed">{product.description}</CardDescription>
+                                </CardContent>
+                                <CardFooter className="pt-0 pb-6 px-6">
+                                    <Button asChild className="w-full bg-brand-navy hover:bg-blue-900 text-white rounded-md h-11">
+                                        <Link to="/contact">Enquire Now</Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        ))}
+                    </div>
+                    
+                    <div className="mt-12 text-center">
+                        <Button asChild variant="outline" size="lg" className="border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white px-8 rounded-none font-semibold">
+                            <Link to="/products">View All Products</Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. BUSINESS VERTICALS (Cards) */}
+            <section className="py-24 bg-white">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
                     <motion.div 
                         initial="hidden"
@@ -251,7 +299,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 4. GeM / GOV SECTION - Corporate Highlight */}
+            {/* 5. GeM / GOV SECTION - Corporate Highlight */}
             <section className="py-24 relative overflow-hidden bg-brand-navy text-white">
                 <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
@@ -312,7 +360,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 5. NUMBERS / STATS - Redington Style Parallax */}
+            {/* 6. NUMBERS / STATS - Redington Style Parallax */}
             <div ref={targetRef} className="py-20 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80")' }}>
                 <div className="absolute inset-0 bg-brand-navy/90"></div>
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
@@ -333,7 +381,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* 6. PAN INDIA PRESENCE (Map/Locations) */}
+            {/* 7. PAN INDIA PRESENCE (Map/Locations) */}
             <section className="py-24 bg-white">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
                     <div className="text-center mb-16">
@@ -370,7 +418,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* 7. NEWSLETTER / CTA */}
+            {/* 8. NEWSLETTER / CTA */}
             <section className="py-20 bg-gray-900 text-white border-t border-gray-800">
                 <div className="max-w-[1000px] mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold mb-6">Stay Informed</h2>
