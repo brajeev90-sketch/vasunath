@@ -364,20 +364,30 @@ const Home = () => {
             <div ref={targetRef} className="py-20 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80")' }}>
                 <div className="absolute inset-0 bg-brand-navy/90"></div>
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-                    <motion.div style={{ opacity, scale }} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-                        {[
-                            { icon: Building2, count: "15+", label: "Years Experience" },
-                            { icon: Users, count: "500+", label: "Corporate Clients" },
-                            { icon: Globe, count: "12", label: "Cities Covered" },
-                            { icon: BarChart3, count: "10K+", label: "Products Delivered" }
-                        ].map((stat, i) => (
-                            <div key={i} className="p-6 border border-white/10 rounded-lg backdrop-blur-sm hover:bg-white/5 transition-colors">
-                                <stat.icon className="h-10 w-10 text-brand-orange mx-auto mb-4" />
-                                <h3 className="text-4xl lg:text-5xl font-bold mb-2">{stat.count}</h3>
-                                <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">{stat.label}</p>
-                            </div>
-                        ))}
-                    </motion.div>
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+                        <div className="lg:w-1/2 text-white">
+                            <h2 className="text-4xl font-bold mb-6">Impact at Scale</h2>
+                            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                                Over the last 15 years, we have empowered thousands of businesses with cutting-edge technology infrastructure.
+                            </p>
+                        </div>
+                        <div className="lg:w-1/2">
+                            <motion.div style={{ opacity, scale }} className="grid grid-cols-2 gap-8 text-center text-white">
+                                {[
+                                    { icon: Building2, count: "15+", label: "Years Experience" },
+                                    { icon: Users, count: "500+", label: "Corporate Clients" },
+                                    { icon: Globe, count: "12", label: "Cities Covered" },
+                                    { icon: BarChart3, count: "10K+", label: "Products Delivered" }
+                                ].map((stat, i) => (
+                                    <div key={i} className="p-6 border border-white/10 rounded-lg backdrop-blur-sm hover:bg-white/5 transition-colors">
+                                        <stat.icon className="h-10 w-10 text-brand-orange mx-auto mb-4" />
+                                        <h3 className="text-4xl lg:text-5xl font-bold mb-2">{stat.count}</h3>
+                                        <p className="text-gray-300 font-medium uppercase tracking-wider text-sm">{stat.label}</p>
+                                    </div>
+                                ))}
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
