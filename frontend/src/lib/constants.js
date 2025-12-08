@@ -43,15 +43,51 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/1b3ty9gc_1.png"
     },
     { 
-        brand: "Microsoft", 
-        products: "Software, Cloud Solutions, Surface Devices, Operating Systems",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/o8nlmdcm_13.png"
+        brand: "Acer", 
+        products: "Laptop, Desktop, All in One, Monitor"
     },
     { 
-        brand: "Cisco", 
-        products: "Networking, Cloud, Cybersecurity Solutions",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/lfn2mfrs_10.jpg"
+        brand: "LG", 
+        products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators - Fridge, Smart Interective Panel"
     },
+    { 
+        brand: "Seagate", 
+        products: "Internal & External Hard Disc"
+    },
+    { 
+        brand: "Microtek", 
+        products: "UPS, Online UPS"
+    },
+    { 
+        brand: "Brother", 
+        products: "Computer Printer & Multifunction Printer"
+    },
+    { 
+        brand: "Benq", 
+        products: "Projector"
+    },
+    { 
+        brand: "Kent", 
+        products: "RO system, Fan, Air Purifiers"
+    },
+    { 
+        brand: "Ahuja", 
+        products: "Speaker"
+    },
+    { 
+        brand: "Panasonic", 
+        products: "TV & Large Format Display - Interective Panel"
+    },
+    { 
+        brand: "Nikon", 
+        products: "Camera"
+    },
+    { 
+        brand: "Vertiv (Emerson)", 
+        products: "UPS & Online UPS",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/m9mx5ib5_15.png"
+    },
+    // Strategic Partners (for slider)
     { 
         brand: "Poly", 
         products: "Video Conferencing, Headsets, Phones, Collaboration Solutions",
@@ -93,64 +129,14 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/nmvuw5cc_12.png"
     },
     { 
-        brand: "Emerson", 
-        products: "Critical Infrastructure, Automation Solutions",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/m9mx5ib5_15.png"
+        brand: "Cisco", 
+        products: "Networking, Cloud, Cybersecurity Solutions",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/lfn2mfrs_10.jpg"
     },
     { 
-        brand: "Acer", 
-        products: "Laptop, Desktop, All in One, Monitor",
-        // Logo removed as per request
-    },
-    { 
-        brand: "LG", 
-        products: "AC, Smart Television TV, Microwave, Washing Machine, Refrigerators, Smart Interactive Panel",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Seagate", 
-        products: "Internal & External Hard Disc",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Microtek", 
-        products: "UPS, Online UPS",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Brother", 
-        products: "Computer Printer & Multifunction Printer",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Benq", 
-        products: "Projector",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Kent", 
-        products: "RO system, Fan, Air Purifiers",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Ahuja", 
-        products: "Speaker",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Panasonic", 
-        products: "TV & Large Format Display, Interactive Panel",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Nikon", 
-        products: "Camera",
-        // Logo removed as per request
-    },
-    { 
-        brand: "Vertiv", 
-        products: "UPS & Online UPS",
-        // Logo removed as per request
+        brand: "Microsoft", 
+        products: "Software, Cloud Solutions, Surface Devices",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/o8nlmdcm_13.png"
     }
 ];
 
