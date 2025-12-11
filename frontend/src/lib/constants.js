@@ -108,11 +108,7 @@ export const GEM_PORTFOLIO = [
         products: "Cloud Data Services, Storage Systems, Software",
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/g79777yy_7.png"
     },
-    { 
-        brand: "AWS", 
-        products: "Cloud Computing Services",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/tjwwz5qh_8.png"
-    },
+    // AWS removed as per request
     { 
         brand: "Schneider Electric", 
         products: "Energy Management, Automation Solutions",
