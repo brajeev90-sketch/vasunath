@@ -17,7 +17,7 @@ export const NAV_LINKS = [
     { name: "About Us", path: "/about" },
     { name: "Solutions", path: "/solutions" },
     { name: "Products", path: "/products" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact Us", path: "/contact" },
 ];
 
 export const MARKET_AREAS = [
@@ -108,7 +108,11 @@ export const GEM_PORTFOLIO = [
         products: "Cloud Data Services, Storage Systems, Software",
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/g79777yy_7.png"
     },
-    // AWS removed as per request
+    { 
+        brand: "AWS", 
+        products: "Cloud Computing Services",
+        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/tjwwz5qh_8.png"
+    },
     { 
         brand: "Schneider Electric", 
         products: "Energy Management, Automation Solutions",
