@@ -109,11 +109,6 @@ export const GEM_PORTFOLIO = [
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/g79777yy_7.png"
     },
     { 
-        brand: "AWS", 
-        products: "Cloud Computing Services",
-        logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/tjwwz5qh_8.png"
-    },
-    { 
         brand: "Schneider Electric", 
         products: "Energy Management, Automation Solutions",
         logo: "https://customer-assets.emergentagent.com/job_print-tech-supply/artifacts/l5yhjhil_9.png"
